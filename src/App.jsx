@@ -12,12 +12,15 @@ import Favorites from './pages/Favorites';
 import Account from './pages/Account';
 import Checkout from './pages/Checkout';          // ✅ Checkout Page
 import DetailProduct from './pages/DetailProduct'; // ✅ Detail Product Page
+<<<<<<< HEAD
 import Transactions from './pages/Transactions';
 import Katalog from './pages/Katalog';
 import TransactionDetails from './pages/TransactionDetails';
 import Invoice from './pages/Invoice';
 import Success from './pages/Success';
 import Payment from './pages/Payment';
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
 
 // ✅ Navbar didefinisikan langsung di sini
 function Navbar() {
@@ -28,7 +31,10 @@ function Navbar() {
       </div>
       <div className="space-x-6">
         <Link to="/favorites" className="text-gray-700 hover:text-orange-500 font-medium">Favorites</Link>
+<<<<<<< HEAD
         <Link to="/transactions" className="text-gray-700 hover:text-orange-500 font-medium">Transaksi</Link>
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
         <Link to="/account" className="text-gray-700 hover:text-orange-500 font-medium">Akun</Link>
       </div>
     </nav>
@@ -53,6 +59,7 @@ export default function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/checkout" element={<Checkout />} />               {/* ✅ untuk halaman checkout */}
         <Route path="/product/:id" element={<DetailProduct />} />       {/* ✅ untuk detail produk */}
+<<<<<<< HEAD
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/transaction/:id" element={<TransactionDetails />} />
         <Route path="/invoice" element={<Invoice />} />
@@ -62,3 +69,9 @@ export default function App() {
     </>
   );
 }
+=======
+      </Routes>
+    </>
+  );
+}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994

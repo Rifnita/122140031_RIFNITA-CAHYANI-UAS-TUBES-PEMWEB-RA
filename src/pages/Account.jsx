@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 
 export default function Account() {
@@ -24,6 +25,16 @@ export default function Account() {
     const { name, value } = e.target;
     setAccount((prev) => ({ ...prev, [name]: value }));
   };
+=======
+import React, { useState } from 'react';
+
+export default function Account() {
+  const [editMode, setEditMode] = useState(false);
+  const [email, setEmail] = useState('rifnita@example.com');
+  const [password, setPassword] = useState('********');
+  const [phone, setPhone] = useState('+62 812-3456-7890');
+  const [address, setAddress] = useState('Jl. Melati No. 45, Bandar Lampung');
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
 
   const handleSave = () => {
     setEditMode(false);
@@ -52,6 +63,7 @@ export default function Account() {
             {editMode ? (
               <input
                 type="email"
+<<<<<<< HEAD
                 name="email"
                 value={account.email}
                 onChange={handleChange}
@@ -59,6 +71,14 @@ export default function Account() {
               />
             ) : (
               <p className="text-lg font-medium text-gray-800">{account.email}</p>
+=======
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+            ) : (
+              <p className="text-lg font-medium text-gray-800">{email}</p>
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             )}
           </div>
 
@@ -67,6 +87,7 @@ export default function Account() {
             {editMode ? (
               <input
                 type="password"
+<<<<<<< HEAD
                 name="password"
                 value={account.password}
                 onChange={handleChange}
@@ -74,6 +95,14 @@ export default function Account() {
               />
             ) : (
               <p className="text-lg font-medium text-gray-800">{account.password}</p>
+=======
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+            ) : (
+              <p className="text-lg font-medium text-gray-800">{password}</p>
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             )}
           </div>
 
@@ -82,6 +111,7 @@ export default function Account() {
             {editMode ? (
               <input
                 type="text"
+<<<<<<< HEAD
                 name="phone"
                 value={account.phone}
                 onChange={handleChange}
@@ -89,6 +119,14 @@ export default function Account() {
               />
             ) : (
               <p className="text-lg font-medium text-gray-800">{account.phone}</p>
+=======
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+            ) : (
+              <p className="text-lg font-medium text-gray-800">{phone}</p>
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             )}
           </div>
 
@@ -96,6 +134,7 @@ export default function Account() {
             <p className="text-sm text-gray-500">Alamat</p>
             {editMode ? (
               <textarea
+<<<<<<< HEAD
                 name="address"
                 value={account.address}
                 onChange={handleChange}
@@ -103,6 +142,14 @@ export default function Account() {
               />
             ) : (
               <p className="text-lg font-medium text-gray-800">{account.address}</p>
+=======
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+            ) : (
+              <p className="text-lg font-medium text-gray-800">{address}</p>
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             )}
           </div>
         </div>

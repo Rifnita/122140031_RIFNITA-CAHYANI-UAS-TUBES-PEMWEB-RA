@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 
 export default function Brands() {
@@ -31,6 +32,34 @@ export default function Brands() {
   useEffect(() => {
     localStorage.setItem('brands', JSON.stringify(brands));
   }, [brands]);
+=======
+import React, { useState } from 'react';
+
+export default function Brands() {
+  const [brands, setBrands] = useState([
+    {
+      id: 1,
+      name: 'ZARA',
+      items: [
+        { id: 1, name: 'Kemeja Linen', size: 'M', stock: 10 },
+        { id: 2, name: 'Blazer Wanita', size: 'L', stock: 5 },
+      ],
+    },
+    {
+      id: 2,
+      name: 'H&M',
+      items: [
+        { id: 1, name: 'Kaos Oversize', size: 'M', stock: 7 },
+        { id: 2, name: 'Kaos Croptop', size: 'S', stock: 4 },
+      ],
+    },
+    {
+      id: 3,
+      name: 'Pull&Bear',
+      items: [],
+    },
+  ]);
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
 
   const [newBrand, setNewBrand] = useState('');
   const [editId, setEditId] = useState(null);
@@ -41,7 +70,11 @@ export default function Brands() {
   const handleAddBrand = () => {
     if (newBrand.trim() === '') return;
     const newEntry = {
+<<<<<<< HEAD
       id: Date.now(),
+=======
+      id: brands.length + 1,
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
       name: newBrand.trim(),
       items: [],
     };
@@ -75,7 +108,14 @@ export default function Brands() {
         b.id === brandId
           ? {
               ...b,
+<<<<<<< HEAD
               items: [...b.items, { id: Date.now(), ...newItem }],
+=======
+              items: [
+                ...b.items,
+                { id: b.items.length + 1, ...newItem },
+              ],
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             }
           : b
       )
@@ -253,4 +293,8 @@ export default function Brands() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994

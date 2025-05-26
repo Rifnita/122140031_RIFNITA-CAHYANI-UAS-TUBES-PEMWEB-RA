@@ -66,4 +66,8 @@ export default function DetailProduct() {
       </div>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 const initialProducts = [
@@ -8,6 +12,7 @@ const initialProducts = [
     brand: 'ZARA',
     price: '249.000',
     stock: 12,
+<<<<<<< HEAD
     sizes: 'S, M, L, XL',
     image: 'https://via.placeholder.com/150',
   },
@@ -21,6 +26,46 @@ const getStoredProducts = () => {
 export default function Products() {
   const [products, setProducts] = useState(getStoredProducts());
   const [brands, setBrands] = useState([]);
+=======
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 2,
+    name: 'Highwaist Jeans',
+    brand: 'H&M',
+    price: '699.000',
+    stock: 5,
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 3,
+    name: 'Jaket Oversize',
+    brand: 'Pull&Bear',
+    price: '399.000',
+    stock: 5,
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 4,
+    name: 'Crop Cardigan',
+    brand: 'Uniqlo',
+    price: '349.000',
+    stock: 7,
+    image: 'https://via.placeholder.com/150'
+  },
+  {
+    id: 5,
+    name: 'Viscoze Premium',
+    brand: 'Lafiye',
+    price: '159.000',
+    stok: 1,
+    image: 'https://via.placeholder.com/150'
+  }
+];
+
+export default function Products() {
+  const [products, setProducts] = useState(initialProducts);
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
   const [editId, setEditId] = useState(null);
   const [editData, setEditData] = useState({});
   const [showAddForm, setShowAddForm] = useState(false);
@@ -29,11 +74,15 @@ export default function Products() {
     brand: '',
     price: '',
     stock: '',
+<<<<<<< HEAD
     sizes: '',
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
     image: '',
   });
   const [favorites, setFavorites] = useState([]);
 
+<<<<<<< HEAD
   useEffect(() => {
     const storedBrands = JSON.parse(localStorage.getItem('brands')) || [];
     setBrands(storedBrands);
@@ -47,6 +96,8 @@ export default function Products() {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
   const toggleFavorite = (id) => {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
@@ -79,9 +130,15 @@ export default function Products() {
   };
 
   const handleAddProduct = () => {
+<<<<<<< HEAD
     const newId = products.length ? Math.max(...products.map(p => p.id)) + 1 : 1;
     setProducts([...products, { id: newId, ...newProduct }]);
     setNewProduct({ name: '', brand: '', price: '', stock: '', sizes: '', image: '' });
+=======
+    const newId = products.length + 1;
+    setProducts([...products, { id: newId, ...newProduct }]);
+    setNewProduct({ name: '', brand: '', price: '', stock: '', image: '' });
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
     setShowAddForm(false);
   };
 
@@ -101,6 +158,7 @@ export default function Products() {
         <div className="bg-white p-4 rounded-xl shadow-md mb-6">
           <h2 className="text-xl font-semibold mb-4">Form Tambah Produk</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+<<<<<<< HEAD
             <input
               type="text"
               name="name"
@@ -152,6 +210,19 @@ export default function Products() {
               placeholder="URL Gambar"
               className="border p-2 rounded-md"
             />
+=======
+            {['name', 'brand', 'price', 'stock', 'image'].map((field) => (
+              <input
+                key={field}
+                type="text"
+                name={field}
+                value={newProduct[field]}
+                onChange={(e) => handleChange(e, true)}
+                placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                className="border p-2 rounded-md"
+              />
+            ))}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
           </div>
           <button
             onClick={handleAddProduct}
@@ -168,6 +239,10 @@ export default function Products() {
             key={product.id}
             className="relative bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition"
           >
+<<<<<<< HEAD
+=======
+            {/* Icon hati */}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             <div className="absolute top-3 right-3 text-red-500 cursor-pointer text-lg">
               {favorites.includes(product.id) ? (
                 <FaHeart onClick={() => toggleFavorite(product.id)} />
@@ -184,7 +259,11 @@ export default function Products() {
 
             {editId === product.id ? (
               <>
+<<<<<<< HEAD
                 {['name', 'brand', 'price', 'stock', 'sizes'].map((field) => (
+=======
+                {['name', 'brand', 'price', 'stock'].map((field) => (
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
                   <input
                     key={field}
                     type="text"
@@ -211,11 +290,22 @@ export default function Products() {
               </>
             ) : (
               <>
+<<<<<<< HEAD
                 <h2 className="text-lg font-semibold text-gray-800">{product.name}</h2>
                 <p className="text-sm text-gray-500 mb-1">{product.brand}</p>
                 <p className="text-orange-500 font-semibold mb-2">Rp {product.price}</p>
                 <p className="text-sm text-gray-600">Stok: {product.stock}</p>
                 <p className="text-sm text-gray-600">Ukuran: {product.sizes}</p>
+=======
+                <h2 className="text-lg font-semibold text-gray-800">
+                  {product.name}
+                </h2>
+                <p className="text-sm text-gray-500 mb-1">{product.brand}</p>
+                <p className="text-orange-500 font-semibold mb-2">
+                  Rp {product.price}
+                </p>
+                <p className="text-sm text-gray-600">Stok: {product.stock}</p>
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
                 <div className="mt-4 flex gap-2">
                   <button
                     onClick={() => handleEditClick(product)}

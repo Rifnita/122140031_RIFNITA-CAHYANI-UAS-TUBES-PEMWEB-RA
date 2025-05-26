@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// src/pages/Checkout.jsx
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -10,8 +14,11 @@ export default function Checkout() {
     name: '',
     address: '',
     method: 'Transfer Bank',
+<<<<<<< HEAD
     size: '',
     color: '',
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
   });
 
   const handleChange = (e) => {
@@ -21,6 +28,7 @@ export default function Checkout() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+<<<<<<< HEAD
 
     if (!product || parseInt(product.stock) <= 0) {
       alert('Stok produk tidak tersedia.');
@@ -50,6 +58,10 @@ export default function Checkout() {
     localStorage.setItem('transactions', JSON.stringify([...existingTransactions, transaksiBaru]));
 
     navigate('/payment', { state: { transaction: transaksiBaru } });
+=======
+    alert(`Pembelian berhasil!\n\nNama: ${formData.name}\nAlamat: ${formData.address}\nMetode: ${formData.method}\nProduk: ${product.name}`);
+    navigate('/dashboard');
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
   };
 
   if (!product) {
@@ -96,6 +108,7 @@ export default function Checkout() {
             ></textarea>
           </div>
           <div>
+<<<<<<< HEAD
             <label className="block mb-1 text-sm text-gray-700">Ukuran</label>
             <select
               name="size"
@@ -126,6 +139,8 @@ export default function Checkout() {
             </select>
           </div>
           <div>
+=======
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
             <label className="block mb-1 text-sm text-gray-700">Metode Pembayaran</label>
             <select
               name="method"

@@ -11,8 +11,15 @@ export default function Navbar() {
       <div className="space-x-6">
         <Link to="/favorites" className="text-gray-700 hover:text-orange-500 font-medium">Favorites</Link>
         <Link to="/account" className="text-gray-700 hover:text-orange-500 font-medium">Akun</Link>
+<<<<<<< HEAD
         <Link to="/transactions" className="text-gray-700 hover:text-orange-500 font-medium">Transaksi</Link>
       </div>
     </nav>
   );
 }
+=======
+      </div>
+    </nav>
+  );
+}
+>>>>>>> efaa580b454fae0aebd62b00175b0703e383c994
