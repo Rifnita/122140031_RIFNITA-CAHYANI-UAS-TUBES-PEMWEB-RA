@@ -1,0 +1,24 @@
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = "wearspace_app" # Arahkan pytest untuk mencari tes di dalam folder wearspace_app
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["wearspace_app"] # Pastikan coverage menganalisis folder wearspace_app
+omit = [
+    "wearspace_app/alembic/*", # Abaikan folder alembic (kecuali env.py)
+    "wearspace_app/scripts/*", # Abaikan folder scripts (kecuali initialize_db.py jika Anda ingin cover)
+    "wearspace_app/views/default.py", # Abaikan view default jika tidak ada logic bisnis
+    "wearspace_app/views/notfound.py", # Abaikan view notfound
+    "wearspace_app/templates/*",
+    "wearspace_app/static/*",
+    "wearspace_app/tests.py", # Abaikan file test itu sendiri
+]
+branch = true # Mengaktifkan branch coverage
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+fail_under = 60 # Set target coverage Anda di sini!

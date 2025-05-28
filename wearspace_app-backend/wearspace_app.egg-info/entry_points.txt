@@ -1,0 +1,5 @@
+[console_scripts]
+initialize_wearspace_app_db = wearspace_app.scripts.initialize_db:main
+
+[paste.app_factory]
+main = wearspace_app:main
