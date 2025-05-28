@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f4ede8;
+}
+
+.input {
+  @apply focus:outline-none focus:ring focus:border-gray-300 block w-full px-4 py-2 border rounded-md;
+}
+
+.btn {
+  @apply hover:bg-pink-400 py-2 text-white transition-all bg-pink-300 rounded-md;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
